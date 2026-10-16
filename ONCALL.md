@@ -147,7 +147,7 @@ project), not who gets @-mentioned.
 
 | Failure class | Owner | Notes |
 |---|---|---|
-| worker (Sentry project `worker`) | Sentry team `data-science` (unconfirmed) | john said "the data team". Sentry has no team named data/devdata; `data-science` is the closest match, not yet confirmed by john. `data-science` is not on the worker project yet, so Sentry may refuse the assignment until it is added |
+| worker (Sentry project `worker`) | Sentry team `team-data` | the data team; Sentry team created by john 2026-10-16 |
 | web-app, web-api | Sentry team `team-web` (display name "team-webapp") | Team Web |
 | marketplace-api, marketplace-app | Sentry team `team-actnlearn` | Team Web Act & Learn |
 | vesper-mobile-app | Sentry team `team-decide` | Team Web Decide |
