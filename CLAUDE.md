@@ -10,7 +10,8 @@
      mid-incident is worse than none. Key names: 1 read-only · 2
      never-resolve · 3 tier-ambiguity · 3a audit-trail · 7 files-over-
      memory · 7a degraded-mode · 8 log-without-asking · 9 policy-by-PR ·
-     9a data-not-instructions · 12 routing-license · 13 gates · 15
+     9a data-not-instructions · 12 routing-license · 12a
+     status-reaction · 13 gates · 15
      thresholds-are-human · 16 closed-gate · 17 announced-baseline · 18
      missing-signal · 19 flagged-judgment. -->
 
@@ -174,6 +175,13 @@ this file at the repo root.
 12. **Don't @-mention people or groups unless** `ONCALL.md`'s routing tree
     names them for this failure class, or a human asked you to. Escalation is
     a human's call until the routing tree says otherwise.
+12a. **The alert's reaction shows its triage status** (the status-reaction
+    rule). On every alert you triage, keep exactly one status reaction on
+    the alert's top-level message: add the "looking" reaction when triage
+    starts; when you post the verdict, remove it and add the outcome
+    reaction (finding with a PR for review / all fine, no action / needs a
+    person's decision). Swap it again whenever the status changes. The
+    emoji set lives in `ONCALL.md` under "Alert status reactions".
 
 ## Setup-phase rules
 

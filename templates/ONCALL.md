@@ -161,6 +161,24 @@ team coordinates when Slack is unavailable — e.g., the pager's own
 incident notes + a video-call bridge. Claude can't help here; this line
 exists so the team decides this before an outage, not during one.}}
 
+## Alert status reactions
+
+Claude reacts on each alert's top-level message and swaps the reaction as
+the status changes (CLAUDE.md rule 12a), so the channel shows every
+alert's state at a glance without opening threads:
+
+| Status | Reaction |
+|---|---|
+| Looking at it (triage running) | :eyes: |
+| Found something; a PR needs the team's review | :alert: (custom emoji) |
+| Everything fine; no action needed | :white_check_mark: |
+| Needs a person's decision or input | :raised_hand: |
+
+One status reaction at a time: remove the previous one when adding the
+next. Reactions are status markers only — the verdict and its evidence
+still go in the thread. If your workspace has no `:alert:` emoji, add it
+or pick another and update this table.
+
 ## Alert-rule proposals
 
 Format: proposals are paste-ready {{monitor JSON / Terraform / PromQL /
