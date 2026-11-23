@@ -152,6 +152,9 @@ Standing rules in `CLAUDE.md` apply — especially: propose, don't act (rule
    staging afterwards. Label the PR `Ready to Deploy` only after a clean QA
    run (see the reference). Never merge.
 
+9b. **Jira label.** Every Jira ticket Claude creates or adopts gets the label
+   `claude-oncall` (John in 't Hout, 2026-11-23); keep existing labels.
+
 10. **Afterwards**, append the incident to `lessons.md` in its entry format
     (rule 8). If this incident exposed a gap in a reference file, propose
     the amendment as a PR (rule 9) — you fix the playbook, not just the
