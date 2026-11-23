@@ -42,6 +42,22 @@ person. Never merge: review, QA sign-off and merge stay with people.
 *(Provenance: policy set 2026-11-19. First loop test 2026-11-20, two PRs,
 both clean in round 1, so the screenshot-to-ticket step is untested.)*
 
+## "Ready to Deploy" label
+
+When QA, including the feedback loop, finishes **clean**, add the
+`Ready to Deploy` label to the fix PR. Clean means QA actually ran on the
+staging and the latest round found no remaining issues.
+
+- Use the exact label name that exists in that repo. If the repo lacks it,
+  don't create it; tell the channel.
+- No label if QA didn't run, is still pending, or issues remain.
+- If a later push changes the PR, re-run QA. If QA is no longer clean, remove
+  the label.
+- The label is a signal, not a sign-off. Never merge or approve: review, QA
+  sign-off and merge stay with people.
+
+*(Provenance: requested by Jason Viljoen, 2026-11-23.)*
+
 ## Environment gotchas
 
 - **Nightly data refresh blocks staging changes.** Our shared database

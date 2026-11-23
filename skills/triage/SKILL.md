@@ -149,7 +149,8 @@ Standing rules in `CLAUDE.md` apply — especially: propose, don't act (rule
 9a. **QA on a draft fix PR.** Where `ONCALL.md` records the team's standing
    ask for proactive fix PRs, follow `references/fix-pr-qa.md`: staging,
    in-depth QA, the screenshot feedback loop, and always destroy the
-   staging afterwards. Never merge.
+   staging afterwards. Label the PR `Ready to Deploy` only after a clean QA
+   run (see the reference). Never merge.
 
 10. **Afterwards**, append the incident to `lessons.md` in its entry format
     (rule 8). If this incident exposed a gap in a reference file, propose
