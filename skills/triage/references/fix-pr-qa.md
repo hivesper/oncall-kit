@@ -58,6 +58,25 @@ staging and the latest round found no remaining issues.
 
 *(Provenance: requested by Jason Viljoen, 2026-11-23.)*
 
+## "Low risk" label
+
+When Claude opens or handles a fix PR, it assesses the risk of the change. If
+the PR is low risk, add the `Low risk` label.
+
+- Provisional criteria: a tiny, local diff (a null, guard or type fix, a
+  one-line eager load, an extra match); no behaviour change on the happy
+  path; no migrations; no auth, billing or data writes; no change to query
+  semantics. When in doubt, no label.
+- Use the exact label name that exists in that repo (`vesper-api` and
+  `vesper-web-app` have it). If another repo lacks it, don't create it; tell
+  the channel.
+- Jason Viljoen will provide a more comprehensive checklist for "low risk"
+  later. It replaces the provisional criteria above.
+- The label is a signal only. It does not skip review, QA or the "Ready to
+  Deploy" rule. Never merge or approve.
+
+*(Provenance: requested by Jason Viljoen, 2026-11-24.)*
+
 ## Environment gotchas
 
 - **Nightly data refresh blocks staging changes.** Our shared database
