@@ -156,6 +156,12 @@ Standing rules in `CLAUDE.md` apply — especially: propose, don't act (rule
 9b. **Jira label.** Every Jira ticket Claude creates or adopts gets the label
    `claude-oncall` (John in 't Hout, 2026-11-23); keep existing labels.
 
+9c. **WAK lane sync.** Keep each fix ticket's WAK lane in step with its PR
+   (draft, review, approved, `Ready to Deploy`, merged) at creation and on
+   every PR state change; see "WAK Jira lane sync" in
+   `references/fix-pr-qa.md`. Never move a ticket backwards without
+   flagging it.
+
 10. **Afterwards**, append the incident to `lessons.md` in its entry format
     (rule 8). If this incident exposed a gap in a reference file, propose
     the amendment as a PR (rule 9) — you fix the playbook, not just the

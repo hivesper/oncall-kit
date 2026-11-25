@@ -222,7 +222,9 @@ issue with 5+ events in 24h — Claude starts unasked and does:
 4. open a **draft** PR with the fix.
 
 A ScaSta staging is created only once someone in the thread says go.
-Moving to the code review lane, human QA and the merge stay with people.
+Claude keeps the ticket's WAK lane in step with its PR (John in 't Hout,
+2026-11-25; mapping in `skills/triage/references/fix-pr-qa.md`). Human QA
+and the merge stay with people.
 Claude never marks a Sentry issue resolved and never merges.
 
 For everything else, Claude does write steps only when a person in the
