@@ -77,6 +77,18 @@ the PR is low risk, add the `Low risk` label.
 
 *(Provenance: requested by Jason Viljoen, 2026-11-24.)*
 
+## Jira comments for Product (QA and Low risk)
+
+On every oncall fix ticket, add a Jira comment (1) when you judge the PR `Low risk`, saying why in plain words, and (2) when the PR has been through staging, with the QA checklist used.
+
+- Keep the checklist short: business-oriented ("a user can now open X and sees Y"), or "reproduction steps fixed".
+- The readers are Product and Commercial teams. No code jargon: no N+1, endpoint, SQL, class or file names.
+- Staging QA compares endpoint responses before (default branch) and after (PR branch) for equality, using identical payloads. If the changed call can't run on staging, say so in the checklist as "not verified" and don't label the PR Ready to Deploy on that basis alone.
+- A PR without `Ready to Deploy` that has not been through staging goes through staging.
+- Post with the Jira REST API (ADF), before or with the lane move.
+
+*(Provenance: requested by Jason Viljoen, 2026-11-26.)*
+
 ## WAK Jira lane sync
 
 Keep the WAK Jira ticket of every oncall fix in the lane that matches its PR:
@@ -99,7 +111,8 @@ In Progress | Code Review | QA | Ready to deploy | Done.
   don't go by creator.
 - Look up the transition per ticket (`GET /rest/api/3/issue/KEY/transitions`)
   instead of hardcoding transition ids.
-- No Jira comment is needed for a lane move.
+- A lane move alone needs no Jira comment; the `Low risk` and staging comments
+  in "Jira comments for Product" above are still required.
 
 *(Provenance: requested by Jason Viljoen, 2026-11-24; John in 't Hout,
 2026-11-25: "keep these lanes updated as part of your workflow".)*
