@@ -151,7 +151,8 @@ Standing rules in `CLAUDE.md` apply — especially: propose, don't act (rule
    in-depth QA, the screenshot feedback loop, and always destroy the
    staging afterwards. Label the PR `Ready to Deploy` only after a clean QA
    run (see the reference), and `Low risk` on a PR that meets the reference's
-   low-risk criteria. Never merge.
+   low-risk criteria. Post the Jira comments the reference's "Jira comments
+   for Product" section requires. Never merge.
 
 9b. **Jira label.** Every Jira ticket Claude creates or adopts gets the label
    `claude-oncall` (John in 't Hout, 2026-11-23); keep existing labels.
