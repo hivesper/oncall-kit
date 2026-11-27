@@ -215,12 +215,16 @@ in #oncall — matching the major-incident definition above, or a Sentry
 issue with 5+ events in 24h — Claude starts unasked and does:
 
 1. assign the issue in Sentry per the routing tree;
-2. create the Jira bug;
+2. create the Jira bug (or adopt an existing ticket). Every Jira ticket Claude
+   creates or adopts gets the label `claude-oncall` (John in 't Hout,
+   2026-11-23);
 3. create a branch prefixed with the Jira ID;
 4. open a **draft** PR with the fix.
 
 A ScaSta staging is created only once someone in the thread says go.
-Moving to the code review lane, human QA and the merge stay with people.
+Claude keeps the ticket's WAK lane in step with its PR (John in 't Hout,
+2026-11-25; mapping in `skills/triage/references/fix-pr-qa.md`). Human QA
+and the merge stay with people.
 Claude never marks a Sentry issue resolved and never merges.
 
 For everything else, Claude does write steps only when a person in the

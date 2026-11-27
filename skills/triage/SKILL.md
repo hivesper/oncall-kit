@@ -149,7 +149,18 @@ Standing rules in `CLAUDE.md` apply — especially: propose, don't act (rule
 9a. **QA on a draft fix PR.** Where `ONCALL.md` records the team's standing
    ask for proactive fix PRs, follow `references/fix-pr-qa.md`: staging,
    in-depth QA, the screenshot feedback loop, and always destroy the
-   staging afterwards. Never merge.
+   staging afterwards. Label the PR `Ready to Deploy` only after a clean QA
+   run (see the reference), and `Low risk` on a PR that meets the reference's
+   low-risk criteria. Never merge.
+
+9b. **Jira label.** Every Jira ticket Claude creates or adopts gets the label
+   `claude-oncall` (John in 't Hout, 2026-11-23); keep existing labels.
+
+9c. **WAK lane sync.** Keep each fix ticket's WAK lane in step with its PR
+   (draft, review, approved, `Ready to Deploy`, merged) at creation and on
+   every PR state change; see "WAK Jira lane sync" in
+   `references/fix-pr-qa.md`. Never move a ticket backwards without
+   flagging it.
 
 10. **Afterwards**, append the incident to `lessons.md` in its entry format
     (rule 8). If this incident exposed a gap in a reference file, propose
