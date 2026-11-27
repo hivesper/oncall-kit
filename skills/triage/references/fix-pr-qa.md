@@ -77,6 +77,33 @@ the PR is low risk, add the `Low risk` label.
 
 *(Provenance: requested by Jason Viljoen, 2026-11-24.)*
 
+## WAK Jira lane sync
+
+Keep the WAK Jira ticket of every oncall fix in the lane that matches its PR:
+when the ticket and PR are created, and whenever the PR state changes (PR
+events, sweeps). WAK board (id 238) lanes, in order: Backlog | To Do |
+In Progress | Code Review | QA | Ready to deploy | Done.
+
+| PR state | Lane |
+|---|---|
+| merged | Done |
+| labelled `Ready to Deploy` | Ready to deploy |
+| approved, without that label | QA |
+| open / in review | Code Review |
+| draft | In Progress (assumed, unconfirmed by the team) |
+| closed unmerged | don't move; flag in Slack |
+
+- Never move a ticket backwards without flagging it in the channel.
+- Claude's own tickets are the ones labelled `claude-oncall`. The Jira
+  creator field shows a human account (the Jira credential is John's), so
+  don't go by creator.
+- Look up the transition per ticket (`GET /rest/api/3/issue/KEY/transitions`)
+  instead of hardcoding transition ids.
+- No Jira comment is needed for a lane move.
+
+*(Provenance: requested by Jason Viljoen, 2026-11-24; John in 't Hout,
+2026-11-25: "keep these lanes updated as part of your workflow".)*
+
 ## Environment gotchas
 
 - **Nightly data refresh blocks staging changes.** Our shared database
