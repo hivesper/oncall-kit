@@ -163,6 +163,17 @@ Standing rules in `CLAUDE.md` apply — especially: propose, don't act (rule
    `references/fix-pr-qa.md`. Never move a ticket backwards without
    flagging it.
 
+9d. **Sentry link.** When Claude creates or adopts an oncall Jira ticket,
+   link that existing ticket on each of its Sentry issues through Sentry's
+   Jira integration (never create a new ticket from Sentry). Check first:
+   skip if `GET https://sentry.io/api/0/organizations/vespertool/issues/<ID>/`
+   already lists the ticket URL in `annotations` (`.../external-issues/`
+   stays empty for Jira links, so don't use it). Link with
+   `PUT https://sentry.io/api/0/organizations/vespertool/issues/<ID>/integrations/155588/`
+   and body `{"externalIssue":"WAK-1234"}` (155588 = the Jira integration;
+   expect 201). Linking never changes the Sentry status, and Claude still
+   never resolves Sentry issues (Jason Viljoen, 2026-11-27).
+
 10. **Afterwards**, append the incident to `lessons.md` in its entry format
     (rule 8). If this incident exposed a gap in a reference file, propose
     the amendment as a PR (rule 9) — you fix the playbook, not just the

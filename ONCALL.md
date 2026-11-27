@@ -217,7 +217,9 @@ issue with 5+ events in 24h — Claude starts unasked and does:
 1. assign the issue in Sentry per the routing tree;
 2. create the Jira bug (or adopt an existing ticket). Every Jira ticket Claude
    creates or adopts gets the label `claude-oncall` (John in 't Hout,
-   2026-11-23);
+   2026-11-23), and is linked on its Sentry issue(s) through Sentry's Jira
+   integration (Jason Viljoen, 2026-11-27; see `skills/triage/SKILL.md`
+   step 9d);
 3. create a branch prefixed with the Jira ID;
 4. open a **draft** PR with the fix.
 
